@@ -1,0 +1,3 @@
+echo -n ... | wc -mc
+go run utf-8.go
+
