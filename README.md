@@ -1,0 +1,2 @@
+# mipt-os-basic-seminars
+
