@@ -35,7 +35,7 @@ void copy(int sourcefd, int destfd) {
         }
         rbytes = read(sourcefd, buf, sizeof(buf));
         if (rbytes < 0) {
-            err(1, "read_error");
+            err(1, "read error");
         }
     }
 }

@@ -12,13 +12,15 @@ cat /proc/<pid>/fdinfo/0
 See also :)
 
 open, close
-read, write, lseek
+read, write
+lseek, truncate, fallocate
 stat, chmod, chown
 link, symlink, unlink, rename
 mkdir, rmdir
 opendir(3), readdir(3), rewinddir(3), closedir(3)
 errno(3), strerror(3), perror(3), err(3)
-basename(3)
+basename(3), dirname(3)
+strdup(3), memcpy(3), strcpy(3), strcat(3) <- string(3)
 fctnl
 inotify(7)
 

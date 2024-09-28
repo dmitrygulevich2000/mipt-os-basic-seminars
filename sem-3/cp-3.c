@@ -40,7 +40,7 @@ void copy(int sourcefd, int destfd) {
         }
         rbytes = read(sourcefd, buf, sizeof(buf));
         if (rbytes < 0) {
-            err(1, "read_error");
+            err(1, "read error");
         }
     }
 }
@@ -48,7 +48,6 @@ void copy(int sourcefd, int destfd) {
 int prepare_dest(int sourcefd, char* source, char* dest) {
     struct stat source_stat;
     if (fstat(sourcefd, &source_stat) < 0) {
-        err(1, "src stat");
         return -1;
     }
     int perm = source_stat.st_mode & 0777;
