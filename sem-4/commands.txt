@@ -1,0 +1,18 @@
+gcc -no-pie main.c array_sum.s
+objdump -t a.out
+
+gcc -no-pie call.s
+echo $?
+objdump -d -M intel a.out
+
+gcc -no-pie -nostdlib hello-no-std.S
+
+gcc calee-saved.c
+objdump --disassemble=inc -M intel a.out
+
+instruction reference: https://www.felixcloutier.com/x86/
+GNU asm doc:
+https://sourceware.org/binutils/docs-2.38/as.html (html)
+https://ee209-2019-spring.github.io/references/gnu-assembler.pdf (pdf)
+lecture
+google
