@@ -1,0 +1,23 @@
+gcc -mavx sse.s avx.s main.c
+
+sudo apt install gcc-aarch64-linux-gnu qemu-user gdb-multiarch
+export QEMU_LD_PREFIX=/usr/aarch64-linux-gnu/
+
+aarch64-linux-gnu-gcc array_sum.s main.c
+qemu-aarch64 a.out
+
+aarch64-linux-gnu-gcc -g call.s
+qemu-aarch64 -g 5005 a.out
+gdb-multiarch a.out
+(gdb) target remote :5005
+
+aarch64-linux-gnu-objdump -d flow-sizes/a.out
+*можно посмотреть пролог main, кодировку инструкций*
+
+
+calling conventions & other guides:
+https://developer.arm.com/documentation/102374/0102/Procedure-Call-Standard?lang=en
+instruction reference:
+https://developer.arm.com/documentation/ddi0602/2024-09/Base-Instructions
+conditions:
+https://community.arm.com/arm-community-blogs/b/architectures-and-processors-blog/posts/condition-codes-1-condition-flags-and-codes
