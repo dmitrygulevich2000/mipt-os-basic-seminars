@@ -1,0 +1,33 @@
+55ab91275000-55ab91276000 r--p 00000000 08:03 813321                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+55ab91276000-55ab91277000 r-xp 00001000 08:03 813321                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+55ab91277000-55ab91278000 r--p 00002000 08:03 813321                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+55ab91277008- global_const
+55ab91278000-55ab91279000 r--p 00002000 08:03 813321                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+55ab91279000-55ab9127a000 rw-p 00003000 08:03 813321                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+55ab91279010- global_int
+55ab9127902c- global_int_unitialized
+55ab91d07000-55ab91d28000 rw-p 00000000 00:00 0                          [heap]
+55ab91d28000- program break on start
+55ab91d28000- program break after allocations
+7f0d7dc00000-7f0d7dc28000 r--p 00000000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f0d7dc28000-7f0d7ddbd000 r-xp 00028000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f0d7ddbd000-7f0d7de15000 r--p 001bd000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f0d7de15000-7f0d7de16000 ---p 00215000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f0d7de16000-7f0d7de1a000 r--p 00215000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f0d7de1a000-7f0d7de1c000 rw-p 00219000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f0d7de1c000-7f0d7de29000 rw-p 00000000 00:00 0
+7f0d7dee6000-7f0d7df2a000 rw-p 00000000 00:00 0
+7f0d7dee6010- malloc_mem
+7f0d7df42000-7f0d7df44000 rw-p 00000000 00:00 0
+7f0d7df44000-7f0d7df46000 r--p 00000000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f0d7df46000-7f0d7df70000 r-xp 00002000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f0d7df70000-7f0d7df7b000 r--p 0002c000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f0d7df7b000-7f0d7df7c000 rw-p 00000000 00:00 0
+7f0d7df7b000- mmap_mem
+7f0d7df7c000-7f0d7df7e000 r--p 00037000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f0d7df7e000-7f0d7df80000 rw-p 00039000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fff4dca4000-7fff4dcc6000 rw-p 00000000 00:00 0                          [stack]
+7fff4dcc42e8- local_int
+7fff4dce2000-7fff4dce6000 r--p 00000000 00:00 0                          [vvar]
+7fff4dce6000-7fff4dce8000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

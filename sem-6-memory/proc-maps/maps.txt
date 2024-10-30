@@ -1,0 +1,32 @@
+562cd66de000-562cd66df000 r--p 00000000 08:03 813304                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+562cd66df000-562cd66e0000 r-xp 00001000 08:03 813304                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+562cd66e0000-562cd66e1000 r--p 00002000 08:03 813304                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+562cd66e0008- global_const
+562cd66e1000-562cd66e2000 r--p 00002000 08:03 813304                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+562cd66e2000-562cd66e3000 rw-p 00003000 08:03 813304                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-6-memory/a.out
+562cd66e2010- global_int
+562cd66e202c- global_int_unitialized
+562cd7858000-562cd7879000 rw-p 00000000 00:00 0                          [heap]
+562cd7858ac0- malloc_mem
+562cd7879000- program break on start
+562cd7879000- program break after allocations
+7f3a64400000-7f3a64428000 r--p 00000000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f3a64428000-7f3a645bd000 r-xp 00028000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f3a645bd000-7f3a64615000 r--p 001bd000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f3a64615000-7f3a64616000 ---p 00215000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f3a64616000-7f3a6461a000 r--p 00215000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f3a6461a000-7f3a6461c000 rw-p 00219000 103:04 786946                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f3a6461c000-7f3a64629000 rw-p 00000000 00:00 0
+7f3a6471a000-7f3a6471d000 rw-p 00000000 00:00 0
+7f3a64733000-7f3a64737000 rw-p 00000000 00:00 0
+7f3a64733000- mmap_mem
+7f3a64737000-7f3a64739000 r--p 00000000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f3a64739000-7f3a64763000 r-xp 00002000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f3a64763000-7f3a6476e000 r--p 0002c000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f3a6476f000-7f3a64771000 r--p 00037000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f3a64771000-7f3a64773000 rw-p 00039000 103:04 786797                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffd11aff000-7ffd11b21000 rw-p 00000000 00:00 0                          [stack]
+7ffd11b1e838- local_int
+7ffd11be1000-7ffd11be5000 r--p 00000000 00:00 0                          [vvar]
+7ffd11be5000-7ffd11be7000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
