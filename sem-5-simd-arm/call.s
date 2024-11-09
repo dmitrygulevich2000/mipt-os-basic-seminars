@@ -22,7 +22,7 @@ greet:
     // prologue
     push fp // x29
     push lr // x30
-    mov fp, sp // x31
+    mov fp, sp
 
     sub sp, sp, 64
 
