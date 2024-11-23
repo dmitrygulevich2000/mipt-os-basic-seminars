@@ -1,0 +1,14 @@
+ip addr
+ifconfig
+
+netcat -lkv -p 9090
+netcat -v <ip-address> 9090
+# -u for udp
+
+lsof -i -n -P
+
+ip neighbor
+arp
+
+dig yandex.ru
+
