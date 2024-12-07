@@ -1,0 +1,26 @@
+echo | gcc -E -Wp,-v -
+gcc --print-search-dirs
+
+man 7 elf
+relocation types: https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter6-54839.html
+dynamic linking: https://docs.oracle.com/cd/E23824_01/html/819-0690/glchi.html
+
+readelf:
+elf header: -h
+program header: -l
+section headers: -S
+symbol table: -s
+relocations: -r
+dynamic info: -d
+
+objdump -d a.out
+# see *plt* sections
+objdump -s -j .got a.out
+
+gdb a.out
+(gdb) set disassembly-flavor intel
+(gdb) layout asm
+(gdb) si
+(gdb) ni
+(gdb) b *main+60
+(gdb) b *0x5555555551c5
