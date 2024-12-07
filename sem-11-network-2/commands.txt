@@ -1,0 +1,8 @@
+make threading_server
+make threading_server release=1
+
+man gcc >data.txt
+time seq 1 10000 | xargs -I{} -P0 ./make_request.sh data.txt localhost 9090
+
+man 7 socket >data.txt
+time go run bench.go data.txt localhost 9090
