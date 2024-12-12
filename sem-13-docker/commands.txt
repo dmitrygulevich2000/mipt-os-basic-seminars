@@ -1,0 +1,48 @@
+source .env
+. ./.env
+
+docker build -t dev-env .
+
+docker run -d --rm \
+    --name env \
+    -v $HOST_WORKSPACE_DIR:/root/$(basename $HOST_WORKSPACE_DIR) \
+    -p 2222:22 \
+    dev-env
+
+ssh ssh://root@localhost:2222
+
+
+docker build -t kv-server .
+
+docker-compose up -d
+docker-compose down
+
+docker network create -d bridge os
+
+docker run -d --rm --name os-redis -p 6379:6379 redis:7.2-alpine
+docker run -d --rm \
+    --name os-redis \
+    -p 6379:6379 \
+    -v os-redis-data:/data \
+    redis:7.2-alpine redis-server --appendonly yes
+docker run -d --rm \
+    --name os-redis \
+    --network os --network-alias redis \
+    -v os-redis-data:/data \
+    redis:7.2-alpine redis-server --appendonly yes
+
+docker run -d --rm \
+    --name os-kv \
+    -p 9090:9090 \
+    -e REDIS_HOST=172.17.0.2 \
+    -e REDIS_PORT=6379 \
+    kv-server
+docker run -d --rm \
+    --name os-kv \
+    -p 9090:9090 \
+    --network os --network-alias kv \
+    -e REDIS_HOST=redis \
+    -e REDIS_PORT=6379 \
+    kv-server
+
+docker exec -it os-redis sh

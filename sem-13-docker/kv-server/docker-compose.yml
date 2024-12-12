@@ -1,0 +1,31 @@
+services:
+  os-redis:
+    image: redis:7.2-alpine
+    container_name: os-redis
+    hostname: redis
+    networks:
+      - os
+    volumes:
+      - os-redis-data:/data
+    command: [ "redis-server", "--appendonly", "yes" ]
+
+  os-kv:
+    image: kv-server:latest
+    container_name: os-kv
+    hostname: kv
+    networks:
+      - os
+    ports:
+      - 9090:9090
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+networks:
+  os:
+    name: os
+
+volumes:
+  os-redis-data:
+    name: os-redis-data
+
