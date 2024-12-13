@@ -1,10 +1,11 @@
 #!/bin/bash
 
-cat .env
+echo "Preparing environment and running contaiter..."
+cat .env || exit $?
 source .env
 
 docker run -d --rm \
-    --name env \
+    --name os-env \
     -v $HOST_WORKSPACE_DIR:/root/$(basename $HOST_WORKSPACE_DIR) \
     -p 2222:22 \
-    dev-env
+    os-dev-env:latest
