@@ -1,0 +1,16 @@
+man, -h, --help :)
+
+gcc --output io io.c
+gcc -g -o list list.c
+gcc -g -fsanitize=address list.c
+gdb a.out
+    list
+    break
+    run
+    print
+    continue
+    next
+    step
+    finish
+    backtrace
+make <target>
