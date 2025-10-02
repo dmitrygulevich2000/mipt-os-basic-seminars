@@ -18,11 +18,12 @@ int main() {
 
     wchar_t* wstr = calloc(10, sizeof(wchar_t));
     scanf("%ls", wstr);
-    //wchar_t* wstr = L"Привет";
+    // const wchar_t* wstr = L"Привет";
+    wstr[0] = L'п';
 
     printf("wsclen(wstr) = %zd\n", wcslen(wstr));
-    dump_hex(wstr, 10);
+    dump_hex(wstr, 6);
     printf("\"%ls\"\n", wstr);
     
-    free(wstr);
+    // free(wstr);
 }

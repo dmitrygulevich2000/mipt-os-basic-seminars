@@ -13,4 +13,6 @@ gdb a.out
     step
     finish
     backtrace
+coredumpctl
 make <target>
+
