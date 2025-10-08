@@ -27,6 +27,7 @@ void copy(int sourcefd, int destfd) {
     printf("[copy] sizeof(buf) = %zd\n", sizeof(buf));
 
     ssize_t rbytes = read(sourcefd, buf, sizeof(buf));
+
     if (rbytes < 0) {
         err(1, "read error at fd %d", sourcefd);
         fprintf(stderr, "read error at fd %d: %m\n", sourcefd);
@@ -64,8 +65,8 @@ int main(int argc, char** argv) {
     }
 
     // simulate io error
-    //close(sourcefd);
-    //close(destfd);
+    // close(sourcefd);
+    // close(destfd);
     copy(sourcefd, destfd);
 
     close(sourcefd);

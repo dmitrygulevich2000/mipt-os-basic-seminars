@@ -52,6 +52,7 @@ void dump_float(float_ext x) {
     // x.u = htobe32(x.u);
     dump_binary((char*)(&x), sizeof(float_ext));
     printf("%032b\n", x.u);
+    printf("%u\n", x.u);
 
     printf("s: %01b, e: %08b (%d), m: %023b\n", x.b.sign, x.b.exp, x.b.exp - 127, x.b.mant);
 }

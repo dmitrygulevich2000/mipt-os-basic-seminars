@@ -7,7 +7,6 @@ int main() {
 
     scanf("%4c", s);
     scanf(" ");
-    pause();
     scanf("%6c", n);
 
     printf("%.4s", s);
