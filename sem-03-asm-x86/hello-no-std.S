@@ -1,0 +1,26 @@
+#include <sys/syscall.h>
+    
+    .intel_syntax noprefix
+
+    .text
+    .global _start
+
+_start:
+    // write(1, message, 14)
+    // syscall number in : rax
+    mov rax, SYS_write
+    mov rdi, 1
+    lea rsi, message[rip]
+    mov rdx, 14
+    syscall
+    
+    // ret
+    
+    // exit(0)
+    mov rax, SYS_exit
+    mov rdi, 0
+    syscall
+
+    .section .rodata
+message:
+    .string "Hello, world!\n"
