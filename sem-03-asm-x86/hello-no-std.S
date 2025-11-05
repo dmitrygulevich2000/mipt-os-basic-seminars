@@ -10,7 +10,7 @@ _start:
     // syscall number in : rax
     mov rax, SYS_write
     mov rdi, 1
-    lea rsi, message[rip]
+    lea rsi, [rip + message]
     mov rdx, 14
     syscall
     

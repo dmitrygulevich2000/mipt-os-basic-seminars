@@ -10,11 +10,12 @@ greet:
     mov rbp, rsp
     push r12
 
+    // char str[56]
     sub rsp, 56
 
-    // modify r12
-    // ...
+    add r12, 1
 
+    // scanf("%d", &str)
     // arguments passed in : rdi, rsi, rdx, rcx, r8, r9
     lea rdi, [rip + in_fmt]
     mov rsi, rsp
@@ -22,7 +23,7 @@ greet:
     call scanf
     // return value in : rax
 
-    lea rdi, [rip + out_fmt]
+    lea rdi, out_fmt[rip]
     mov rsi, rsp
     call printf
 
@@ -38,12 +39,14 @@ main:
     push rbp
     mov rbp, rsp
 
+    mov r12, 0
+
     call greet
 
     mov rsp, rbp
     pop rbp
 
-    mov rax, 0
+    mov rax, r12
     ret
 
     .section .rodata

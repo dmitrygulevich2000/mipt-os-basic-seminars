@@ -20,8 +20,8 @@ array:
 
 array_sum:
     mov eax, 0
-    lea rdi, array[rip]
-    mov rsi, size[rip]
+    lea rdi, [rip + array]
+    mov rsi, [rip + size]
 
     // for rcx = 0 to rsi
     mov rcx, 0
@@ -36,5 +36,5 @@ loop:
     jmp loop
 loop_end:
 
-    mov sum_result[rip], eax
+    mov [rip + sum_result], eax
     ret

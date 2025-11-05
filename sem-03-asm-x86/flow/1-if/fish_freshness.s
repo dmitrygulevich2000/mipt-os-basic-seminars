@@ -6,14 +6,14 @@
     .extern days
 
 fish_freshness:
-    mov rdi, days[rip]
+    mov rdi, [rip + days]
 
     cmp rdi, 3
     jl else
-    mov qword ptr freshness[rip], 2
+    mov qword ptr [rip + freshness], 2
     jmp next
 else:
-    mov qword ptr freshness[rip], 1
+    mov qword ptr [rip + freshness], 1
 next:
   
     ret
