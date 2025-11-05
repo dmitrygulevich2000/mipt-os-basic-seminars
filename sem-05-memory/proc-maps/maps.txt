@@ -1,0 +1,34 @@
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+7ffe8b5f4000-7ffe8b5f6000 r-xp 00000000 00:00 0                          [vdso]
+7ffe8b5f0000-7ffe8b5f4000 r--p 00000000 00:00 0                          [vvar]
+7ffe8b47e580- local_int
+7ffe8b45f000-7ffe8b480000 rw-p 00000000 00:00 0                          [stack]
+7f8171e9a000-7f8171e9c000 rw-p 00039000 103:04 787033                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f8171e98000-7f8171e9a000 r--p 00037000 103:04 787033                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f8171e8c000-7f8171e97000 r--p 0002c000 103:04 787033                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f8171e62000-7f8171e8c000 r-xp 00002000 103:04 787033                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f8171e60000-7f8171e62000 r--p 00000000 103:04 787033                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f8171e5c000-7f8171e60000 rw-p 00000000 00:00 0
+7f8171e5c000- mmap_mem
+7f8171e43000-7f8171e46000 rw-p 00000000 00:00 0
+7f8171e1c000-7f8171e29000 rw-p 00000000 00:00 0
+7f8171e1a000-7f8171e1c000 rw-p 00219000 103:04 787311                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f8171e16000-7f8171e1a000 r--p 00215000 103:04 787311                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f8171e15000-7f8171e16000 ---p 00215000 103:04 787311                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f8171dbd000-7f8171e15000 r--p 001bd000 103:04 787311                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f8171c606f0- printf
+7f8171c28000-7f8171dbd000 r-xp 00028000 103:04 787311                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f8171c00000-7f8171c28000 r--p 00000000 103:04 787311                    /usr/lib/x86_64-linux-gnu/libc.so.6
+558bec694000- program break on start
+558bec694000- program break after allocations
+558bec673ac0- malloc_mem
+558bec673000-558bec694000 rw-p 00000000 00:00 0                          [heap]
+558bcd1e502c- global_int_unitialized
+558bcd1e5010- global_int
+558bcd1e5000-558bcd1e6000 rw-p 00003000 08:03 825441                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-05-memory/proc-maps/a.out
+558bcd1e4000-558bcd1e5000 r--p 00002000 08:03 825441                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-05-memory/proc-maps/a.out
+558bcd1e3008- global_const
+558bcd1e3000-558bcd1e4000 r--p 00002000 08:03 825441                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-05-memory/proc-maps/a.out
+558bcd1e2299- main
+558bcd1e2000-558bcd1e3000 r-xp 00001000 08:03 825441                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-05-memory/proc-maps/a.out
+558bcd1e1000-558bcd1e2000 r--p 00000000 08:03 825441                     /mnt/shared-data/dmitry/teaching/os/seminars/sem-05-memory/proc-maps/a.out
