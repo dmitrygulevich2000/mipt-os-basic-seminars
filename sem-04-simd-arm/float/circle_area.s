@@ -14,7 +14,7 @@ circle_area:
 
     // scalar, single-precision
     mulss xmm0, xmm0
-    movss xmm1, pi[rip]
+    movss xmm1, [rip + pi]
     mulss xmm0, xmm1
 
     // float return value in xmm0
