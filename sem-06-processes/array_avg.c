@@ -11,24 +11,24 @@
 #include <unistd.h>
 
 typedef struct {
-    float* data;
+    double* data;
     size_t size;
 } array_t;
 
 void* summer(void* raw_array) {
     array_t* array = (array_t*)raw_array;
-    float sum = 0;
+    double sum = 0;
     for (size_t i = 0; i < array->size; ++i) {
         sum += array->data[i];
     }
 
-    float* res = malloc(sizeof(float));
+    double* res = malloc(sizeof(double));
     *res = sum;
     return res;
 }
 
-float array_avg_parallel(float* array, size_t size,
-                         int thread_num) {
+double array_avg_parallel(double* array, size_t size,
+                          int thread_num) {
     // size must be multiple of thread_num
     pthread_t* threads = malloc(sizeof(pthread_t) * thread_num);
     array_t* ranges = malloc(sizeof(array_t) * thread_num);
@@ -38,11 +38,11 @@ float array_avg_parallel(float* array, size_t size,
         pthread_create(threads + i, NULL, summer, ranges + i);
     }
 
-    float sum = 0;
+    double sum = 0;
     for (size_t i = 0; i < thread_num; ++i) {
         void* raw_range_sum;
         pthread_join(threads[i], &raw_range_sum);
-        sum += *(float*)raw_range_sum;
+        sum += *(double*)raw_range_sum;
         free(raw_range_sum);
     }
 
@@ -51,12 +51,12 @@ float array_avg_parallel(float* array, size_t size,
     return sum / size;
 }
 
-float array_avg(float* array, size_t size, int thread_num) {
+double array_avg(double* array, size_t size, int thread_num) {
     struct timespec start;
     struct timespec end;
     clock_gettime(CLOCK_MONOTONIC, &start);
 
-    float avg = array_avg_parallel(array, size, thread_num);
+    double avg = array_avg_parallel(array, size, thread_num);
 
     clock_gettime(CLOCK_MONOTONIC, &end);
     uint64_t elapsed_mcsec =
@@ -67,7 +67,7 @@ float array_avg(float* array, size_t size, int thread_num) {
     return avg;
 }
 
-float array_avg_c(float* array, size_t size);
+double array_avg_c(double* array, size_t size);
 
 int main(int argc, char** argv) {
     // parse args
@@ -80,22 +80,22 @@ int main(int argc, char** argv) {
     // create array
     size_t size = 0;
     scanf("%ld", &size);
-    float* array = malloc(sizeof(float) * size);
+    double* array = malloc(sizeof(double) * size);
     for (size_t i = 0; i < size; ++i) {
-        scanf("%f", array + i);
+        scanf("%lf", array + i);
     }
 
     // do calculations
-    float expected = array_avg_c(array, size);
-    float got = array_avg(array, size, thread_num);
+    double expected = array_avg_c(array, size);
+    double got = array_avg(array, size, thread_num);
 
-    printf("calculated average: %g\n", got);
+    printf("calculated average: %lg\n", got);
     assert(fabs(got - expected) < 1e-3);
     free(array);
 }
 
-float array_avg_c(float* array, size_t size) {
-    float sum = 0;
+double array_avg_c(double* array, size_t size) {
+    double sum = 0;
     for (size_t i = 0; i < size; ++i) {
         sum += array[i];
     }

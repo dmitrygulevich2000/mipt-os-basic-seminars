@@ -29,9 +29,11 @@ void do_work(int tasks) {
     }
 }
 
+const int TASK_COUNT = 100;
+
 void* thread_fun(void* code) {
     log_info("running another thread\n");
-    do_work(10);
+    do_work(TASK_COUNT);
     log_info("exiting\n");
 }
 
@@ -46,7 +48,7 @@ int main() {
     }
 
     log_info("running main thread\n");
-    do_work(10);
+    do_work(TASK_COUNT);
 
     status = pthread_join(thread, NULL);
     if (status != 0) {
