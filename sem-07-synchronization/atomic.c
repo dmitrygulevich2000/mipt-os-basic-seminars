@@ -6,9 +6,6 @@ volatile _Atomic int counter = 0;
 
 void* worker(void*) {
     for (int i = 0; i < 100000; ++i) {
-        // read
-        // increment
-        // write
         atomic_fetch_add(&counter, 1);
     }
 }

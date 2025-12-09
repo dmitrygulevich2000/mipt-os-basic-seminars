@@ -53,14 +53,15 @@ int main() {
 volatile _Atomic bool locked;
 
 void my_init() {
-    atomic_store(&locked, 0);
+    atomic_store(&locked, false);
 }
 
 void my_lock() {
-    while (atomic_exchange(&locked, 1) == 1)
-        ;
+    while (atomic_exchange(&locked, true)) {
+        sched_yield();
+    }
 }
 
 void my_unlock() {
-    atomic_store(&locked, 0);
+    atomic_store(&locked, false);
 }

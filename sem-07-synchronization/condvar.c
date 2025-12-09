@@ -18,18 +18,17 @@ void* ping_fun(void*) {
 
         // what if unlock mutex after check but before falling
         // asleep?
-        // if (strcmp(str, "pong") != 0) {
-        //     pthread_mutex_unlock(&mutex);
-        //     // here other thread writes "pong" and signal
-        //     sched_yield();
-        //     sched_yield();
-        //     sched_yield();
-        //     sched_yield();
-        //     sched_yield();
-        //     sched_yield();
-        //     pthread_mutex_lock(&mutex);
-        //     pthread_cond_wait(&changed, &mutex);
-        // }
+        //  if (strcmp(str, "pong") != 0) {
+        //      pthread_mutex_unlock(&mutex);
+        //      // here other thread writes "pong" and signal
+        //      sched_yield();
+        //      sched_yield();
+        //      sched_yield();
+        //      sched_yield();
+        //      sched_yield();
+        //      pthread_mutex_lock(&mutex);
+        //      pthread_cond_wait(&changed, &mutex);
+        //  }
 
         sprintf(str, "ping");
         printf("ping\n");
@@ -43,12 +42,13 @@ void* pong_fun(void*) {
     for (int i = 0; i < 10; ++i) {
         pthread_mutex_lock(&mutex);
 
-        // while due to spurious wakeup
+        // "while" due to spurious wakeup
         while (strcmp(str, "ping") != 0) {
             // unlocks mutex and fall asleep (atomically!)
             pthread_cond_wait(&changed, &mutex);
             // locks mutex
         }
+
         sprintf(str, "pong");
         printf("pong\n");
 
