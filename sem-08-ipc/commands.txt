@@ -1,0 +1,14 @@
+^C
+^Z
+^\
+
+kill <pid>
+kill -s SIGTERM <pid>
+kill -15 <pid>
+
+echo $$
+
+<command> &
+jobs
+fg
+fg 1
