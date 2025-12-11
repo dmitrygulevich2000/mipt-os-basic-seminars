@@ -1,0 +1,26 @@
+echo | gcc -E -Wp,-v -
+gcc --print-search-dirs
+
+man 5 elf
+relocation types: https://docs.oracle.com/cd/E23824_01/html/819-0690/chapter6-54839.html
+dynamic linking: https://docs.oracle.com/cd/E23824_01/html/819-0690/glchi.html
+x86_64 abi https://gitlab.com/x86-psABIs/x86-64-ABI
+
+readelf
+    elf header: -h
+    program header: -l
+    section headers: -S
+    symbol table: -s
+    relocations: -r
+    dynamic info: -d
+
+objdump -d -M intel a.out
+objdump -s -j .got -j .got.plt a.out
+
+/dynamic-lazy$
+    LD_LIBRARY_PATH=./lib gdb a.out
+    (gdb) display/4i $rip
+    (gbd) b5
+    (gdb) si [until go to linker]
+    (gdb) finish
+    (gdb) si [until go to study]
