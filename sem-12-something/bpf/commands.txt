@@ -1,0 +1,15 @@
+https://habr.com/ru/articles/493880/
+
+tcpdump -i wlp4s0 -d 'ip and src host 127.0.0.1'
+wireshark
+https://github.com/torvalds/linux/blob/master/Documentation/networking/filter.rst
+or
+https://docs.kernel.org/networking/filter.html
+
+man seccomp
+make run cmd='touch a.txt'
+make run cmd='cat Makefile'
+make run cmd=ls
+
+https://samanbarghi.com/post/2014-09-05-how-to-wrap-a-system-call-libc-function-in-linux/
+make run_hacked cmd=...
